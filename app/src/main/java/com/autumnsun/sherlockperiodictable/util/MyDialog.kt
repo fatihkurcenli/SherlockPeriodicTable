@@ -61,11 +61,13 @@ class MyDialog(val model: PeriodicTableModel) : DialogFragment() {
         val numberText = view.findViewById<TextView>(R.id.number_dialog_text_view);
         val imageUrl = view.findViewById<ImageView>(R.id.imageView);
         val summaryText = view.findViewById<TextView>(R.id.summary_text);
+        val solidPhaseText = view.findViewById<TextView>(R.id.solid_phase_text_view);
 
         model.let {
             name.text = it.name
             numberText.text = "${it.id?.plus(1)}"
             summaryText.text = it.summary
+            solidPhaseText.text = it.phase
         }
         if (model.spectralImage != null) {
             imageUrl.show()
